@@ -243,7 +243,6 @@ end
 
 return {
     patterns = {
-	"^[#!/](pmhelp)$",
     "^[#!/](chats)$",
     "^[#!/](chatlist)$",
     "^[#!/](join) (%d+)$",
