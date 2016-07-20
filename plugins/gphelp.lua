@@ -143,7 +143,6 @@ Help
 اگر ریپورت هستید 
 @shereyder_bot
 
-@cliTEAM
 ]]
 end
 return {
