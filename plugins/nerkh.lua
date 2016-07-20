@@ -18,7 +18,7 @@ return [[
 💢در صورت ریپورتی💢
 @shereyder_bot
 
-@cliTEAN
+@cliTEAM
 ]]
 end
 return {
