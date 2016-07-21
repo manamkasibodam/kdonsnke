@@ -243,7 +243,6 @@ function create_config( )
     "lock_username",
     "lock_tag",
     "lock_reply",
-    "rmsg",
     "send",
     "set_type",
     "sh",
@@ -272,20 +271,26 @@ function create_config( )
     },
     sudo_users = {193184480},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[cli team v3.1
+    about_text = [[MeGa shield v2.9
 An advanced administration bot based on TG-CLI written in Lua
 
 Github:
-NOT OPEN
+https://github.com/hafez16/mega-shield
 
 Admins:
-@shereyder [Developer]
+@hafez1116hafez [Developer]
+@amirho3ien911 [Developer]
+@Eblis_alone [Manager]
+@Mmd_hei [sponsor]
 
 Special thanks to
-Mega-shield
+SEEDTEAM
+Hextor team
+Magic team
+Avira team
 
 Our channels
-@cliTEAM [persian]
+@shieldTM [persian]
 ]],
     help_text_realm = [[
 Realm Commands:
