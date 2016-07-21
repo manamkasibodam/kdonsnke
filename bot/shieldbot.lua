@@ -265,8 +265,6 @@ function create_config( )
     "aparat",
     "time",
     "insta",
-    "sfun",
-    "simsimi",
     "nerkh"
     },
     sudo_users = {193184480},--Sudo users
