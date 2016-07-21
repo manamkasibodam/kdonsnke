@@ -270,28 +270,22 @@ function create_config( )
     "simsimi",
     "nerkh"
     },
-    sudo_users = {80182995},--Sudo users
+    sudo_users = {193184480},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[MeGa shield v2.9
+    about_text = [[cli team v3.1
 An advanced administration bot based on TG-CLI written in Lua
 
 Github:
-https://github.com/hafez16/mega-shield
+NOT OPEN
 
 Admins:
-@hafez1116hafez [Developer]
-@amirho3ien911 [Developer]
-@Eblis_alone [Manager]
-@Mmd_hei [sponsor]
+@shereyder [Developer]
 
 Special thanks to
-SEEDTEAM
-Hextor team
-Magic team
-Avira team
+Mega-shield
 
 Our channels
-@shieldTM [persian]
+@cliTEAM [persian]
 ]],
     help_text_realm = [[
 Realm Commands:
