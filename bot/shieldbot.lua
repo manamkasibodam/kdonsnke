@@ -267,7 +267,7 @@ function create_config( )
     "insta",
     "nerkh"
     },
-    sudo_users = {193184480},--Sudo users
+    sudo_users = {190647723},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[MeGa shield v2.9
 An advanced administration bot based on TG-CLI written in Lua
