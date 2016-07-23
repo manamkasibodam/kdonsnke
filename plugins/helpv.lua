@@ -144,7 +144,7 @@ Help
 @shereyder
 اگر ریپورت هستید 
 @shereyder_bot]]
-    if matches[1] == 'help' and is_sudo(msg) then
+    if matches[1] == 'help' and is_admin1(msg) then
       send_large_msg("user#id"..msg.from.id, help)      
    return 'لیست دستورات برایه پی وی شما ارسال شد✉️'
     end
