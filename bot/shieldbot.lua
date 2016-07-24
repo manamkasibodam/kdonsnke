@@ -249,30 +249,42 @@ function create_config( )
     "set_type",
     "welcome",
     "sh",
-    "serverinfo"
+    "serverinfo",
+    "gphelp",
+    "map",
+    "me",
+    "helpv",
+    "adsu",
+    "feedback",
+    "aparat",
+    "arz",
+    "azan",
+    "fun",
+    "help",
+    "kickme",
+    "lock",
+    "insta",
+    "weather",
+    "mute",
+    "time",
+    "nerkh",
+    "trfa",
+    "tr"
     },
-    sudo_users = {80182995},--Sudo users
+    sudo_users = {190647723},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[MeGa shield v2.9
-An advanced administration bot based on TG-CLI written in Lua
+    about_text = [[cli v3.1
 
-Github:
-https://github.com/hafez16/mega-shield
+NoT OPEN
 
 Admins:
-@hafez1116hafez [Developer]
-@amirho3ien911 [Developer]
-@Eblis_alone [Manager]
-@Mmd_hei [sponsor]
+@SHEREYDE4 [Developer]
 
 Special thanks to
 SEEDTEAM
-Hextor team
-Magic team
-Avira team
 
 Our channels
-@shieldTM [persian]
+@CLITEAM [persian]
 ]],
     help_text_realm = [[
 Realm Commands:
