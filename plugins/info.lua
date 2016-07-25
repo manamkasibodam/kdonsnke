@@ -1,7 +1,7 @@
 ﻿local function callback_reply(extra, success, result)
 	--icon & rank ------------------------------------------------------------------------------------------------
 	userrank = "Member"
-	if tonumber(result.from.peer_id) == 122774063 then
+	if tonumber(result.from.peer_id) == 193184480 then
 		userrank = "Master ⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/master.webp", ok_cb, false)
 	elseif is_sudo(result) then
@@ -653,10 +653,10 @@ return {
 			},
 		},
 	patterns = {
-		"^(dinfo) (.*)$",
-		"^(info) ([^%s]+) (.*)$",
-		"^([Ii]nfo) (.*)$",
-		"^([Ii]nfo)$",
+		"^[!/#](dinfo) (.*)$",
+		"^[!/#](info) ([^%s]+) (.*)$",
+		"^[!/#]([Ii]nfo) (.*)$",
+		"^[!/#]([Ii]nfo)$",
 	},
 	run = run,
 }
