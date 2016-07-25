@@ -178,10 +178,10 @@ local function lock_group_links(msg, data, target)
     return
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
-  if group_link_lock == '🔐' then
+  if group_link_lock == '🔒' then
     return 'Link posting is already locked'
   else
-    data[tostring(target)]['settings']['lock_link'] = '🔐'
+    data[tostring(target)]['settings']['lock_link'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'Link posting has been locked'
   end
@@ -318,10 +318,10 @@ local function lock_group_reply(msg, data, target)
     return
   end
   local group_reply_lock = data[tostring(target)]['settings']['reply']
-  if group_reply_lock == '🔐' then
+  if group_reply_lock == '🔒' then
     return 'reply is already locked'
   else
-    data[tostring(target)]['settings']['reply'] = '🔐'
+    data[tostring(target)]['settings']['reply'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'reply has been locked'
   end
@@ -349,7 +349,7 @@ local function lock_group_username(msg, data, target)
   if group_username_lock == '🔒' then
     return 'username is already locked'
   else
-    data[tostring(target)]['settings']['username'] = '🔐'
+    data[tostring(target)]['settings']['username'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'username has been locked'
   end
@@ -377,7 +377,7 @@ local function lock_group_media(msg, data, target)
   if group_media_lock == '🔒' then
     return 'media is already locked'
   else
-    data[tostring(target)]['settings']['media'] = '🔐'
+    data[tostring(target)]['settings']['media'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'media has been locked'
   end
@@ -458,10 +458,10 @@ local function lock_group_fwd(msg, data, target)
     return
   end
   local group_fwd_lock = data[tostring(target)]['settings']['fwd']
-  if group_fwd_lock == '🔐' then
+  if group_fwd_lock == '🔒' then
     return 'fwd is already locked'
   else
-    data[tostring(target)]['settings']['fwd'] = '🔐'
+    data[tostring(target)]['settings']['fwd'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'fwd has been locked'
   end
@@ -812,10 +812,10 @@ local function lock_group_contacts(msg, data, target)
     return
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_contacts']
-  if group_contacts_lock == 'yes' then
+  if group_contacts_lock == '🔒' then
     return 'Contact posting is already locked'
   else
-    data[tostring(target)]['settings']['lock_contacts'] = 'yes'
+    data[tostring(target)]['settings']['lock_contacts'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'Contact posting has been locked'
   end
@@ -826,10 +826,10 @@ local function unlock_group_contacts(msg, data, target)
     return
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
-  if group_contacts_lock == 'no' then
+  if group_contacts_lock == '🔓' then
     return 'Contact posting is already unlocked'
   else
-    data[tostring(target)]['settings']['lock_contacts'] = 'no'
+    data[tostring(target)]['settings']['lock_contacts'] = '🔓'
     save_data(_config.moderation.data, data)
     return 'Contact posting has been unlocked'
   end
@@ -840,10 +840,10 @@ local function enable_strict_rules(msg, data, target)
     return
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == 'yes' then
+  if group_strict_lock == '🔒' then
     return 'Settings are already strictly enforced'
   else
-    data[tostring(target)]['settings']['strict'] = 'yes'
+    data[tostring(target)]['settings']['strict'] = '🔒'
     save_data(_config.moderation.data, data)
     return 'Settings will be strictly enforced'
   end
@@ -854,10 +854,10 @@ local function disable_strict_rules(msg, data, target)
     return
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
-  if group_strict_lock == 'no' then
+  if group_strict_lock == '🔓' then
     return 'Settings are not strictly enforced'
   else
-    data[tostring(target)]['settings']['strict'] = 'no'
+    data[tostring(target)]['settings']['strict'] = '🔓'
     save_data(_config.moderation.data, data)
     return 'Settings will not be strictly enforced'
   end
@@ -898,10 +898,10 @@ local function set_public_membermod(msg, data, target)
 	data[tostring(target)]['long_id'] = msg.to.peer_id
 	save_data(_config.moderation.data, data)
   end
-  if group_public_lock == 'yes' then
+  if group_public_lock == '🔒' then
     return 'Group is already public'
   else
-    data[tostring(target)]['settings']['public'] = 'yes'
+    data[tostring(target)]['settings']['public'] = '🔒'
     save_data(_config.moderation.data, data)
   end
   return 'SuperGroup is now: public'
@@ -917,10 +917,10 @@ local function unset_public_membermod(msg, data, target)
 	data[tostring(target)]['long_id'] = msg.to.peer_id
 	save_data(_config.moderation.data, data)
   end
-  if group_public_lock == 'no' then
+  if group_public_lock == '🔓' then
     return 'Group is not public'
   else
-    data[tostring(target)]['settings']['public'] = 'no'
+    data[tostring(target)]['settings']['public'] = '🔓'
 	data[tostring(target)]['long_id'] = msg.to.long_id
     save_data(_config.moderation.data, data)
     return 'SuperGroup is now: not public'
