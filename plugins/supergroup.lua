@@ -179,11 +179,11 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == '🔒' then
-    return 'Link posting is already locked'
+    return '💢قفل لینک از قبل فعال است💢'
   else
     data[tostring(target)]['settings']['lock_link'] = '🔒'
     save_data(_config.moderation.data, data)
-    return 'Link posting has been locked'
+    return '💢قفل لینک فعال شد💢'
   end
 end
 
