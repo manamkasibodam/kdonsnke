@@ -39,7 +39,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been added!'
+	  local text = 'ربات به سوپر گروه اضافه شد!'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -63,7 +63,7 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been removed'
+	  local text = 'ربات از سوپر گروه حذف شد!'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -1069,7 +1069,7 @@ local function promote2(receiver, member_username, user_id)
   local group = string.gsub(receiver, 'channel#id', '')
   local member_tag_username = string.gsub(member_username, '@', '(at)')
   if not data[group] then
-    return send_large_msg(receiver, 'SuperGroup is not added.')
+    return send_large_msg(receiver, 'ربات در سوپر گروه اضافه نشده است.')
   end
   if data[group]['moderators'][tostring(user_id)] then
     return send_large_msg(receiver, member_username..' is already a moderator.')
@@ -1097,7 +1097,7 @@ local function modlist(msg)
   local data = load_data(_config.moderation.data)
   local groups = "groups"
   if not data[tostring(groups)][tostring(msg.to.id)] then
-    return 'SuperGroup is not added.'
+    return 'ربات در سوپر گروه اضافه نشده بود.'
   end
   -- determine if table is empty
   if next(data[tostring(msg.to.id)]['moderators']) == nil then
@@ -1594,7 +1594,7 @@ local function run(msg, matches)
 				return
 			end
 			if is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is already added.', ok_cb, false)
+				return reply_msg(msg.id, '💥ربات از قبل در سوپر گروه اضافه شده است💥', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1605,7 +1605,7 @@ local function run(msg, matches)
 
 		if matches[1] == 'rem' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is not added.', ok_cb, false)
+				return reply_msg(msg.id, 'ربات در سوپر گروه اضافه نشده است.', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
 			superrem(msg)
@@ -1736,7 +1736,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "💥Yoυr Nαмe💥: " ..string.gsub(msg.from.print_name, "_", " ").. "\n💥Yoυr Uѕerɴαмe💥: @"..(msg.from.username or '----').."\n💥Yoυr ID💥: "..msg.from.id.."\n\n💥SυperGroυp Nαмe💥: " ..string.gsub(msg.to.print_name, "_", " ").. "\n💥SυperGroυp ID💥: "..msg.to.id
+				return "💥Yoυr Nαмe💥: " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n💥Yoυr Uѕerɴαмe💥: @"..(msg.from.username or '----').."\n\n💥Yoυr ID💥: "..msg.from.id.."\n\n💥SυperGroυp Nαмe💥: " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n💥SυperGroυp ID💥: "..msg.to.id
 			end
 		end
 
