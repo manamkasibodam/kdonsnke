@@ -116,7 +116,7 @@ local function kick_ban_res(extra, success, result)
 			send_large_msg(receiver, "You can't ban mods/owner/admins")
 			return
         end
-        send_large_msg(receiver, 'ðŸ’¥Ú©Ø§Ø±Ø¨Ø± @'..member..' ['..member_id..'] Ø¨Ù† Ø´Ø¯ðŸ’¥')
+        send_large_msg(receiver, '💥کاربر @'..member..' ['..member_id..'] بن شد💥')
 		ban_user(member_id, chat_id)
       elseif get_cmd == 'unban' then
         send_large_msg(receiver, 'ðŸ’¥Ú©Ø§Ø±Ø¨Ø± @'..member..' ['..member_id..'] Ø§Ø² Ù„ÛŒØ³Øª Ø¨Ù† Ø®Ø§Ø±Ø¬ Ø´Ø¯ðŸ’¥')
@@ -124,10 +124,10 @@ local function kick_ban_res(extra, success, result)
         redis:srem(hash, member_id)
         return 'User '..user_id..' unbanned'
       elseif get_cmd == 'banall' then
-        send_large_msg(receiver, 'ðŸ’¥Ú©Ø§Ø±Ø¨Ø± @'..member..' ['..member_id..'] Ø³ÙˆÙ¾Ø± Ø¨Ù† Ø´Ø¯ðŸ’¥')
+        send_large_msg(receiver, '💥کاربر @'..member..' ['..member_id..'] سوپر بن شد💥')
 		banall_user(member_id)
       elseif get_cmd == 'unbanall' then
-        send_large_msg(receiver, 'ðŸ’¥Ú©Ø§Ø±Ø¨Ø± @'..member..' ['..member_id..'] Ø§Ø² Ù„ÛŒØ³Øª Ø³ÙˆÙ¾Ø± Ø¨Ù† Ø®Ø§Ø±Ø¬ Ø´Ø¯ðŸ’¥')
+        send_large_msg(receiver, '💥کاربر @'..member..' ['..member_id..'] از لیست سوپر بن خارج شد💥')
 	    unbanall_user(member_id)
     end
 end
@@ -136,7 +136,7 @@ local function run(msg, matches)
 local support_id = msg.from.id
  if matches[1]:lower() == 'id' and msg.to.type == "chat" or msg.to.type == "user" then
     if msg.to.type == "user" then
-      return "ðŸ’¥BoÑ‚ IDðŸ’¥: "..msg.to.id.. "\n\nðŸ’¥YoÏ…r IDðŸ’¥: "..msg.from.id
+      return "💥ایدی ربات💥: "..msg.to.id.. "\n\n💥ایدی شما💥: "..msg.from.id
     end
     if type(msg.reply_id) ~= "nil" then
       local print_name = user_print_name(msg.from):gsub("â€®", "")
@@ -146,7 +146,7 @@ local support_id = msg.from.id
     elseif matches[1]:lower() == 'id' then
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
-      return "ðŸ’¥GroÏ…p ID Ò“or " ..string.gsub(msg.to.print_name, "_", " ").. "ðŸ’¥:\n\n"..msg.to.id
+      return "💥اسم گروه💥" ..string.gsub(msg.to.print_name, "_", " ").. "\n\n💥ایدی گروه💥"..msg.to.id
     end
   end
   if matches[1]:lower() == 'kickme' and msg.to.type == "chat" then-- /kickme
