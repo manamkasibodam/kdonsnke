@@ -1,2 +1,2 @@
-#(CLI TEAM)[https://telegram.me/cliteam]
+#[CLI TEAM](https://telegram.me/cliteam)
 *@CLITEAM*
