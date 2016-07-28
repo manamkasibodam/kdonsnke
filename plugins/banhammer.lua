@@ -119,7 +119,7 @@ local function kick_ban_res(extra, success, result)
         send_large_msg(receiver, '💥کاربر @'..member..' ['..member_id..'] بن شد💥')
 		ban_user(member_id, chat_id)
       elseif get_cmd == 'unban' then
-        send_large_msg(receiver, 'ðŸ’¥Ú©Ø§Ø±Ø¨Ø± @'..member..' ['..member_id..'] Ø§Ø² Ù„ÛŒØ³Øª Ø¨Ù† Ø®Ø§Ø±Ø¬ Ø´Ø¯ðŸ’¥')
+        send_large_msg(receiver, '💥کاربر  @'..member..' ['..member_id..']💥از لیست بن خارج شد')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
         return 'User '..user_id..' unbanned'
