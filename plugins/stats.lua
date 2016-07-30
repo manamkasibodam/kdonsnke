@@ -7,7 +7,7 @@ return [[
       NoT OPEN
 
          Admins:
-@SHEREYDE4 [Developer]
+@SHEREYDER [Developer]
 
    Special thanks to
           SHIELD
