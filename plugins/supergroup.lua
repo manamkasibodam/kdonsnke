@@ -39,7 +39,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been added!'
+	  local text = '<code> SuperGroup has been added! </code>'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -1736,7 +1736,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return ">Your Name: " ..string.gsub(msg.from.print_name, "_", " ").. "\n>Your Username: @"..(msg.from.username or '----').."\n>Your ID: "..msg.from.id.."\n\n>SuperGroup Name: " ..string.gsub(msg.to.print_name, "_", " ").. "\n>SuperGroup ID: "..msg.to.id
+				return "<code>💢Your Name💢:\n " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n💢Your Username💢:\n @"..(msg.from.username or '----').."\n\n💢Your ID💢: "..msg.from.id.."\n\n💢SuperGroup Name💢:\n " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n💢SuperGroup ID💢</code>: "..msg.to.id
 			end
 		end
 
@@ -1751,7 +1751,7 @@ local function run(msg, matches)
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
-					send_large_msg(receiver, '*Error: Failed to retrieve link* \nReason: Not creator.\n\nIf you have the link, please use /setlink to set it')
+					send_large_msg(receiver, '💥 ربات سازنده گروه نیست\n\nلطفا دستور \n!setlink\nرا ارسال کنید و لینکی که میخواید ثبت کنید را ارسال کنید💥')
 					data[tostring(msg.to.id)]['settings']['set_link'] = nil
 					save_data(_config.moderation.data, data)
 				else
@@ -1767,14 +1767,14 @@ local function run(msg, matches)
 		if matches[1] == 'setlink' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
-			return 'Please send the new group link now'
-		end
+			return '💥لینکی که میخواید ثبت کنید را ارسال کنید💥'
+		end 
 
 		if msg.text then
 			if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
 				data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
 				save_data(_config.moderation.data, data)
-				return "New link set"
+				return "💢لینک جدید ثبت شد💢"
 			end
 		end
 
@@ -1784,10 +1784,10 @@ local function run(msg, matches)
 			end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-				return "Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
+				return "💢ساخت لینک جدید با دستور \n!newlink\n\nاگر ربات سازنده گروه نیست دستور \n!setlink را ارسال کنید و لینکی که میخواید ثبت کنید را ارسال نمایید💢"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "Group link:\n"..group_link
+			return "✴لینک گروه✴:\n"..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
