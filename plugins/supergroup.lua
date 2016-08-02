@@ -39,7 +39,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = '<code> SuperGroup has been added! </code>'
+	  local text = 'ربات به سوپر گروه اضافه شد!'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -63,7 +63,7 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been removed'
+	  local text = 'ربات از سوپر گروه حذف شد'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -1736,7 +1736,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "<code>💢Your Name💢:\n " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n💢Your Username💢:\n @"..(msg.from.username or '----').."\n\n💢Your ID💢: "..msg.from.id.."\n\n💢SuperGroup Name💢:\n " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n💢SuperGroup ID💢</code>: "..msg.to.id
+				return "💢Your Name💢:\n " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n💢Your Username💢:\n @"..(msg.from.username or '----').."\n\n💢Your ID💢: "..msg.from.id.."\n\n💢SuperGroup Name💢:\n " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n💢SuperGroup ID💢: "..msg.to.id
 			end
 		end
 
