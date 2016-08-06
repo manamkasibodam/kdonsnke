@@ -6,6 +6,9 @@ return [[
 💥Group Help💥
 #Gphelp en
 〰〰〰〰〰〰
+💥The show second guide management Robot💥
+#gphelp2 en
+〰〰〰〰〰〰
 💥Funhelp💥
 #Fun en
 〰〰〰〰〰〰
