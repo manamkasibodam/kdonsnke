@@ -33,9 +33,9 @@ return [[
 
 ⚫️Get a city map
 
-⚪️!me
+⚪!gif [text]
 
-⚫️Show your profile number of messages only group 
+⚫️Build your own Gif 
 
 👑 @cliTEAM 👑
 ]]
