@@ -1033,7 +1033,7 @@ function show_supergroup_settingsmod(msg, target)
   local gp_type = data[tostring(msg.to.id)]['group_type']
   
   local settings = data[tostring(target)]['settings']
-  local text = "____________________\nSυperGroυp ѕeттιɴɢѕ💥:⬇️\n____________________\n>💥Locĸ lιɴĸѕ💥 : "..settings.lock_link.."\n>💥Locĸ coɴтαcтѕ💥: "..settings.lock_contacts.."\n>💥Locĸ ғlood:💥 "..settings.flood.."\n>💥Flood ѕeɴѕιтιvιтy💥 : "..NUM_MSG_MAX.."\n>💥Locĸ ѕpαм💥: "..settings.lock_spam.."\n>💥Locĸ Arαвιc💥: "..settings.lock_arabic.."\n>💥Locĸ Meмвer💥: "..settings.lock_member.."\n>💥Locĸ RTL💥: "..settings.lock_rtl.."\n>💥Locĸ Tɢѕervιce💥: "..settings.lock_tgservice.."\n>💥Locĸ ѕтιcĸer💥: "..settings.lock_sticker.."\n>💥Locĸ тαɢ(#)💥: "..settings.tag.."\n>💥Locĸ eмojι💥: "..settings.emoji.."\n>💥Locĸ eɴɢlιѕн💥: "..settings.english.."\n>💥Locĸ ғwd(ғorwαrd)💥: "..settings.fwd.."\n>💥Locĸ reply💥: "..settings.reply.."\n>💥locĸ joιɴ💥: "..settings.join.."\n>💥Locĸ υѕerɴαмe(@)💥: "..settings.username.."\n>💥Locĸ мedια💥: "..settings.media.."\n>💥Locĸ ғoѕн💥: "..settings.fosh.."\n>💥Locĸ leαve💥: "..settings.leave.."\n>💥Locĸ вoтѕ💥: "..bots_protection.."\n>💥Locĸ operαтor💥: "..settings.operator.."\n____________________\n💥Eαѕy Sweeт&Fαѕтer Swιтcн💥:⬇️\n____________________\n>💥Swιтcн Model Eтeнαd💥: "..settings.etehad.."\n>💥Locĸ αll💥: "..settings.all.."\n____________________\nℹ️Aвoυт Groυp:⬇️\n____________________\n>💥ɢroυp тype💥: "..gp_type.."\n>💥Pυвlιc💥: "..settings.public.."\n>💥Sтrιcт ѕeттιɴɢѕ💥: "..settings.strict.."\n____________________\n>>💥вoт verѕιoɴ💥 : v3.1<<\n>>>👑CLI TEAM👑<<<\n>>@cliTEAM<<"
+  local text = "____________________\n➣#SυperGroυp_ѕeттιɴɢѕ💥:⬇️\n____________________\n>💥➣#Locĸ_lιɴĸѕ💥 : "..settings.lock_link.."\n>💥➣#Locĸ_coɴтαcтѕ💥: "..settings.lock_contacts.."\n>💥➣#Locĸ_ғlood:💥 "..settings.flood.."\n>💥➣#Flood_ѕeɴѕιтιvιтy💥 : "..NUM_MSG_MAX.."\n>💥➣#Locĸ_ѕpαм💥: "..settings.lock_spam.."\n>💥➣#Locĸ_Arαвιc💥: "..settings.lock_arabic.."\n>💥➣#Locĸ_Meмвer💥: "..settings.lock_member.."\n>💥➣#Locĸ_RTL💥: "..settings.lock_rtl.."\n>💥➣#Locĸ_Tɢѕervιce💥: "..settings.lock_tgservice.."\n>💥➣#Locĸ_ѕтιcĸer💥: "..settings.lock_sticker.."\n>💥➣#Locĸ_тαɢ(#)💥: "..settings.tag.."\n>💥➣#Locĸ_eмojι💥: "..settings.emoji.."\n>💥➣#Locĸ_eɴɢlιѕн💥: "..settings.english.."\n>💥➣#Locĸ_ғwd(ғorwαrd)💥: "..settings.fwd.."\n>💥➣#Locĸ_reply💥: "..settings.reply.."\n>💥➣#Locĸ_joιɴ💥: "..settings.join.."\n>💥➣#Locĸ_υѕerɴαмe(@)💥: "..settings.username.."\n>💥➣#Locĸ_мedια💥: "..settings.media.."\n>💥➣#Locĸ_ғoѕн💥: "..settings.fosh.."\n>💥➣#Locĸ_leαve💥: "..settings.leave.."\n>💥➣#Locĸ_вoтѕ💥: "..bots_protection.."\n>💥➣#Locĸ_operαтor💥: "..settings.operator.."\n____________________\n💥➣#Eαѕy_Sweeт_Fαѕтer_Swιтcн💥:⬇️\n____________________\n>💥➣#Swιтcн_Model_Eтeнαd💥: "..settings.etehad.."\n>💥➣#Locĸ_αll💥: "..settings.all.."\n____________________\nℹ➣#Aвoυт_Groυp:⬇️\n____________________\n>💥➣#ɢroυp_тype💥: "..gp_type.."\n>💥➣#Pυвlιc💥: "..settings.public.."\n>💥➣#Sтrιcт_ѕeттιɴɢѕ💥: "..settings.strict.."\n____________________\n>>💥➣#вoт_verѕιoɴ💥 : v3.1<<\n>>>👑#CLI_TEAM👑<<<\n>>@cliTEAM<<"
   return text
 end
 
@@ -1266,7 +1266,7 @@ function get_message_callback(extra, success, result)
 			send_large_msg(receiver, "["..user_id.."] removed from the muted user list")
 		elseif is_admin1(msg) then
 			mute_user(chat_id, user_id)
-			send_large_msg(receiver, " ["..user_id.."] added to the muted user list")
+			send_large_msg(receiver, "💥کاربر با ایدی ["..user_id.."] به لیست لال شدگان پیوست💥")
 		end
 	end
 end
