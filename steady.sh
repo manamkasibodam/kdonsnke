@@ -5,7 +5,7 @@ NONVOLUNTARYCHECK=0
 VOLUNTARY=1
 VOLUNTARYCHECK=0
 I=1
-BOT=botname  # You can put here other bots. Also you can change it to run more than one bot in the same server.
+BOT=TeleSeed  # You can put here other bots. Also you can change it to run more than one bot in the same server.
 RELOADTIME=5  # Time between checking cpu calls of the cli process. Set the value high if your bot does not receive lots of messages.
 
 
@@ -32,7 +32,7 @@ cat << EOF
  
 EOF
 echo -e "               \e[100m                Steady script            \e[00;37;40m"
-echo -e "               \e[01;34m            by shield team              \e[00;37;40m"
+echo -e "               \e[01;34m            by cli team              \e[00;37;40m"
 echo ""
 cat << EOF
  $bld$f1▄ ▀▄   ▄▀ ▄   $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4▄ ▀▄   ▄▀ ▄   $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
@@ -59,9 +59,9 @@ sleep 0.5
 
 echo ""
 echo -e "\033[38;5;208m                                              \033[0;00m"
-echo -e "\033[38;5;208m             shield team                      \033[0;00m"
-echo -e "\033[38;5;208m             @shieldTM                        \033[0;00m"
-echo -e "\033[38;5;208m          developer : @hafez1116hafez         \033[0;00m"
+echo -e "\033[38;5;208m             cli team                      \033[0;00m"
+echo -e "\033[38;5;208m             @cliteam                        \033[0;00m"
+echo -e "\033[38;5;208m          developer : @shereyder         \033[0;00m"
 echo -e "\033[38;5;208m                                              \033[0;00m"
 
 sleep 1.5
@@ -190,7 +190,7 @@ cat << EOF
  
 EOF
 echo -e "                \e[100m                Steady script           \e[00;37;40m"
-echo -e "               \e[01;34m                    by shield team     \e[00;37;40m"
+echo -e "               \e[01;34m                    by cli team     \e[00;37;40m"
 echo ""
 cat << EOF
  $bld$f1▄ ▀▄   ▄▀ ▄   $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4▄ ▀▄   ▄▀ ▄   $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
@@ -217,9 +217,9 @@ sleep 0.5
 
 echo ""
 echo -e "\033[38;5;208m                                              \033[0;00m"
-echo -e "\033[38;5;208m        shield team                           \033[0;00m"
-echo -e "\033[38;5;208m          @shieldTM                           \033[0;00m"
-echo -e "\033[38;5;208m          developer : @hafez1116hafez         \033[0;00m"
+echo -e "\033[38;5;208m        cli team                           \033[0;00m"
+echo -e "\033[38;5;208m          @cliteam                           \033[0;00m"
+echo -e "\033[38;5;208m          developer : @shereyder         \033[0;00m"
 echo -e "\033[38;5;208m                                              \033[0;00m"
 
 # Starting preliminar setup
@@ -503,9 +503,9 @@ while getopts ":tsTSih" opt; do
 	echo ""
 	echo -e "\e[0m"
 echo -e "\033[38;5;208m                                            \033[0;00m"
-echo -e "\033[38;5;208m        shield team                         \033[0;00m"
-echo -e "\033[38;5;208m         @shieldTM                          \033[0;00m"
-echo -e "\033[38;5;208m        developer : @hafez1116hafez\033[0;00m"
+echo -e "\033[38;5;208m        cli team                         \033[0;00m"
+echo -e "\033[38;5;208m         @cliTEAM                          \033[0;00m"
+echo -e "\033[38;5;208m        developer : @shereyder\033[0;00m"
 echo -e "\033[38;5;208m                                              \033[0;00m"	
 echo ""
 	exit 1
