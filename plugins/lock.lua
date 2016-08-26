@@ -32,7 +32,7 @@ return [[دستورات راهنما قفل
 ⚙!lock tag
 ⚙بستن هشتگ #
 ⚙!lock emoji
-⚙بستن امجو 
+⚙بستن اموجی 
 ⚙!lock username
 ⚙بستن یوزرنیم @
 ⚙!lock join
