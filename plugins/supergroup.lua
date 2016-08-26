@@ -179,11 +179,11 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return 'Link posting is already locked'
+    return '🔒قفل لینک فعال بود🔒'
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Link posting has been locked'
+    return '🔐قفل لینک فعال شد🔐'
   end
 end
 
@@ -193,11 +193,11 @@ local function unlock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return 'Link posting is not locked'
+    return '🔓قفل لینک فعال نبود🔓'
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Link posting has been unlocked'
+    return '🔓قفل لینک غیرفعال شد🔓'
   end
 end
 
@@ -207,11 +207,11 @@ local function lock_group_all(msg, data, target)
   end
   local group_all_lock = data[tostring(target)]['settings']['all']
   if group_all_lock == 'yes' then
-    return 'all setting is already locked'
+    return '🔒قفل تمام تنظیمات فعال بود🔒'
   else
     data[tostring(target)]['settings']['all'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'all setting has been locked'
+    return '🔐قفل تمام تنظیمات فعال شد🔐'
   end
 end
 
@@ -221,11 +221,11 @@ local function unlock_group_all(msg, data, target)
   end
   local group_all_lock = data[tostring(target)]['settings']['all']
   if group_all_lock == 'no' then
-    return 'all setting is not locked'
+    return '🔓قفل تمام تنظیمات فعال نبود🔓'
   else
     data[tostring(target)]['settings']['all'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'all setting has been unlocked'
+    return '🔓قفل تمام تنظیمات غیرفعال شد🔓'
   end
 end
 
@@ -235,11 +235,11 @@ local function lock_group_etehad(msg, data, target)
   end
   local group_etehad_lock = data[tostring(target)]['settings']['etehad']
   if group_etehad_lock == 'yes' then
-    return 'etehad setting is already locked'
+    return '🔒سوییچ اتحاد فعال بود🔒'
   else
     data[tostring(target)]['settings']['etehad'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'etehad setting has been locked'
+    return '🔐سوییچ اتحاد فعال شد🔐'
   end
 end
 
@@ -249,11 +249,11 @@ local function unlock_group_etehad(msg, data, target)
   end
   local group_etehad_lock = data[tostring(target)]['settings']['etehad']
   if group_etehad_lock == 'no' then
-    return 'etehad setting is not locked'
+    return '🔓سوییچ اتحاد فعال نبود🔓'
   else
     data[tostring(target)]['settings']['etehad'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'etehad setting has been unlocked'
+    return '🔓سوییچ اتحاد غیرفعال شد🔓'
   end
 end
 
@@ -1209,9 +1209,9 @@ function get_message_callback(extra, success, result)
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] set: ["..result.from.peer_id.."] as owner by reply")
 			if result.from.username then
-				text = "@"..result.from.username.." [ "..result.from.peer_id.." ] added as owner"
+				text = "🔸کاربر @"..result.from.username.." [ "..result.from.peer_id.." ] مدیر اصلی گروه شد🔸"
 			else
-				text = "[ "..result.from.peer_id.." ] added as owner"
+				text = "🔸کاربر [ "..result.from.peer_id.." ] مدیر اصلی گروه شد🔸"
 			end
 			send_large_msg(channel_id, text)
 		end
@@ -1517,9 +1517,9 @@ elseif get_cmd == "setadmin" then
 					save_data(_config.moderation.data, data)
 					savelog(channel, name_log.."["..from_id.."] set ["..v.peer_id.."] as owner by username")
 				if result.username then
-					text = member_username.." ["..v.peer_id.."] added as owner"
+					text = member_username.."🔸کاربر ["..v.peer_id.."] ادمین اصلی گروه شد🔸"
 				else
-					text = "["..v.peer_id.."] added as owner"
+					text = "🔸کاربر ["..v.peer_id.."] ادمین اصلی گروه شد🔸"
 				end
 			end
 		elseif memberid and vusername ~= member and vpeer_id ~= memberid then
@@ -1534,7 +1534,7 @@ elseif get_cmd == "setadmin" then
 				data[tostring(channel)]['set_owner'] = tostring(memberid)
 				save_data(_config.moderation.data, data)
 				savelog(channel, name_log.."["..from_id.."] set ["..memberid.."] as owner by username")
-				text = "["..memberid.."] added as owner"
+				text = "🔸کاربر ["..memberid.."] ادمین اصلی گروه شد🔸"
 			end
 		end
 	end
@@ -1594,7 +1594,7 @@ local function run(msg, matches)
 				return
 			end
 			if is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is already added.', ok_cb, false)
+				return reply_msg(msg.id, 'ربات از قبل به سوپر گروه اضافه شده است.', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1605,7 +1605,7 @@ local function run(msg, matches)
 
 		if matches[1] == 'rem' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is not added.', ok_cb, false)
+				return reply_msg(msg.id, 'سوپر گروه اضافه نشده بود.', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
 			superrem(msg)
@@ -1736,9 +1736,9 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "🤖CLI BOT🤖\n➖➖➖➖➖➖➖➖➖➖➖\n👤ABOUT YOU👤\n\n👤Your Name👤: " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n👤Your Username👤: @"..(msg.from.username or '----').."\n\n👤Your ID👤: "..msg.from.id.."\n\n👤Your Phone👤: +" ..string.gsub(msg.from.phone, "_", " ").."\n➖➖➖➖➖➖➖➖➖➖➖\n🌐ABOUT GROUP🌐\n\n🌐SuperGroup Name🌐: " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n🌐SuperGroup ID🌐: "..msg.to.id
-			end
-		end
+				return "🤖CLI BOT🤖\n➖➖➖➖➖➖➖➖➖➖➖\n👤ABOUT YOU👤\n\n👤Your Name👤: " ..string.gsub(msg.from.print_name, "_", " ").. "\n\n👤Your Username👤: @"..(msg.from.username or '----').."\n\n👤Your ID👤: "..msg.from.id.."\n\n➖➖➖➖➖➖➖➖➖➖➖\n🌐ABOUT GROUP🌐\n\n🌐SuperGroup Name🌐: " ..string.gsub(msg.to.print_name, "_", " ").. "\n\n🌐SuperGroup ID🌐: "..msg.to.id
+   end
+  end
 
 		if matches[1] == 'kickme' then
 			if msg.to.type == 'channel' then
@@ -1751,11 +1751,11 @@ local function run(msg, matches)
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
-					send_large_msg(receiver, '💥 ربات سازنده گروه نیست\n\nلطفا دستور \n!setlink\nرا ارسال کنید و لینکی که میخواید ثبت کنید را ارسال کنید💥')
+					send_large_msg(receiver, '🔸 ربات سازنده گروه نیست\n\nلطفا دستور \n!setlink\nرا ارسال کنید و لینکی که میخواید ثبت کنید را ارسال کنید🔸')
 					data[tostring(msg.to.id)]['settings']['set_link'] = nil
 					save_data(_config.moderation.data, data)
 				else
-					send_large_msg(receiver, "Created a new link")
+					send_large_msg(receiver, "لینک جدید ساخته شد✔")
 					data[tostring(msg.to.id)]['settings']['set_link'] = result
 					save_data(_config.moderation.data, data)
 				end
@@ -1767,14 +1767,14 @@ local function run(msg, matches)
 		if matches[1] == 'setlink' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
-			return '💥لینکی که میخواید ثبت کنید را ارسال کنید💥'
+			return '🔸لینکی که میخواید ثبت کنید را ارسال کنید🔸'
 		end 
 
 		if msg.text then
 			if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
 				data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
 				save_data(_config.moderation.data, data)
-				return "💢لینک جدید ثبت شد💢"
+				return "🔸لینک جدید ثبت شد🔸"
 			end
 		end
 
@@ -1784,10 +1784,10 @@ local function run(msg, matches)
 			end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-				return "💢ساخت لینک جدید با دستور \n!newlink\n\nاگر ربات سازنده گروه نیست دستور \n!setlink را ارسال کنید و لینکی که میخواید ثبت کنید را ارسال نمایید💢"
+				return "🔸ساخت لینک جدید با دستور \n!newlink\n\nاگر ربات سازنده گروه نیست دستور \n!setlink را ارسال کنید و لینکی که میخواید ثبت کنید را ارسال نمایید🔸"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "✴لینک گروه✴:\n"..group_link
+			return "🔸لینک گروه🔸:\n"..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
